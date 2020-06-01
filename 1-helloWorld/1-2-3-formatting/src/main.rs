@@ -30,6 +30,13 @@ struct Color {
     green: u8, 
     blue: u8,
 }
+// EXERCISE:
+impl Display for Color {
+    fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+    	write!(f, "RGB ({}, {}, {}) 0x{:02X}{:02X}{:02X}",
+    		self.red, self.green, self.blue, self.red, self.green, self.blue)
+    }
+}
 
 
 
@@ -52,6 +59,8 @@ fn main() {
         // EXERCISE: Switch this to use {} once you've added an implementation
         // for fmt::Display.
         println!("{:?}", *color);
+        println!("{}", *color);
+        println!("");
     }
 
 }
